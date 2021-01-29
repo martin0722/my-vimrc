@@ -24,8 +24,8 @@ noremap <c-b> :bd<CR>
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+match ExtraWhitespace /\s\+$\|^$\n\n\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\|^$\n\n\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$\|^$\n\n\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$\|^$\n\n\+$/
 autocmd BufWinLeave * call clearmatches()
